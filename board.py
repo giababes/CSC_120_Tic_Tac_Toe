@@ -59,8 +59,6 @@ def main():
     player_won = False
     winning_player = 0
 
-    #  print("Testing print_board")
-    #  print_board(board)
     print("Tic-Tac-Toe!")
     print("Player 1 is X, Player 2 is O.")
     while not player_won:
@@ -78,6 +76,14 @@ def main():
 
             place_mark(row_choice, col_choice, player)
             print_board(board)
+            player_won = check_win(player)
+            if player_won:
+                winning_player = player
+                break
+
+    print("***********************")
+    print("Player", player, "wins!")
+    print("***********************")
 
 
 main()
